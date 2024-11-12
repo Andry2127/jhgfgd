@@ -46,7 +46,7 @@ class PostAPI(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument("ceo")
-        parser.add_argument("cclub")
+        parser.add_argument("club")
         params = parser.parse_args()
         id = db_actions.add_post(params.get("ceo"), params.get("club"))
         answer = jsonify(f"Нову інф успішно доданно під id {id}")
